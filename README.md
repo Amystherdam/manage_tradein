@@ -1,19 +1,23 @@
-<h1 align="center">
-	Manage Trade-In
-</h1>
+<div align="center">
+  <h1>
+    Manage Trade-In
+  </h1>
 
-![](https://i.ibb.co/4Ny4qdC/manage-tradein-no-background.png)
+  <div>
+    <img src="https://i.ibb.co/4Ny4qdC/manage-tradein-no-background.png" alt="manage-tradein-no-background" border="0">
+  </div>
 
-<h2 align="center">
-	Sobre o sistema
-</h2>
+  <h2>
+    Sobre o sistema
+  </h2>
 
-<p align="center">
-	Aplicação que visa o gerenciamento de vendas em um supermercado.
-</p>
+  <p>
+    Aplicação que visa o gerenciamento de vendas em um supermercado.
+  </p>
 
-<h2 align="center">
-	Estruturação do banco de dados e dos relacionamentos
-</h2>
+  <h2>
+    Estruturação do banco de dados e dos relacionamentos
+  </h2>
 
-![](https://i.ibb.co/j3vZPfX/database-structure-and-relationships.png")
+  <img src="https://i.ibb.co/nMg82Wx/database-structure-and-relationships.png" alt="database-structure-and-relationships" border="0">
+</div>
