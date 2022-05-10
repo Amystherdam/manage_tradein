@@ -11,3 +11,9 @@
 <p align="center">
 	Aplicação que visa o gerenciamento de vendas em um supermercado.
 </p>
+
+<h2 align="center">
+	Estruturação do banco de dados e dos relacionamentos
+</h2>
+
+![](https://i.ibb.co/j3vZPfX/database-structure-and-relationships.png")
