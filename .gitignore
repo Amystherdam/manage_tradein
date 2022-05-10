@@ -13,6 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore templates
+/public/templates
+
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
