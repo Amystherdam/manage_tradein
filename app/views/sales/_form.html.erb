@@ -1,0 +1,36 @@
+<%= simple_form_for sale do |form| %>
+  <% if sale.errors.any? %>
+    <div>
+      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :customer_id %>
+    <%= form.text_field :customer_id %>
+  </div>
+
+  <div>
+    <%= 
+      form.input :product_ids,
+      collection: Product.all.map { |product| [ product.name, product.id ] },
+      include_hidden: false,
+      input_html: { multiple: true } 
+    %>
+  </div>
+
+  <div>
+    <%= form.label :date_sale %>
+    <%= form.datetime_select :date_sale %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
