@@ -15,5 +15,10 @@
   <%= @sale.date_sale %>
 </p>
 
+<p>
+  <strong>Outgoing Invoice</strong>
+  <%= image_tag @sale.outgoing_invoice %>
+</p>
+
 <%= link_to 'Edit', edit_sale_path(@sale) %> |
 <%= link_to 'Back', sales_path %>
