@@ -1,5 +1,6 @@
 class UserManagementController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  authorize_resource :class => :user_management
 
   def index
     @users = User.all

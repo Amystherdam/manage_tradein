@@ -52,9 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Rails forms made easy.
 gem 'simple_form'
-
 # flexible authentication solution
 gem 'devise'
-
 # One form for multiple related tables
 gem "nested_form"
+# CanCanCan is an authorization library
+gem 'cancancan'
