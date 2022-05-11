@@ -6,7 +6,7 @@
   <%= f.fields_for :user_profile do | up | %>
 
     <figure>
-      <%= image_tag current_user.user_profile.picture  %>
+      <%= image_tag set_img(current_user) %>
     </figure>
 
     <div>

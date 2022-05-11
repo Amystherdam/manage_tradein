@@ -4,7 +4,7 @@
   <%= f.fields_for :user_profile do | up | %>
 
     <figure>
-      <%= image_tag user.user_profile.picture if user.user_profile.picture.attached? %>
+      <%= image_tag set_img(user) %>
     </figure>
 
     <div>

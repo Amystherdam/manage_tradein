@@ -15,7 +15,7 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.avatar %></td>
+        <td><%= image_tag set_img(customer) %></td>
         <td><%= customer.name %></td>
         <td><%= customer.birthdate %></td>
         <td><%= link_to 'Show', customer %></td>

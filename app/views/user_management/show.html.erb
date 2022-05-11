@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Picture:</strong>
+  <%= image_tag set_img(@user) %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @user.user_profile.name %>
 </p>

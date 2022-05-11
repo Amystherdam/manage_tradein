@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Picture</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Gender</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag set_img(user) %></td>
         <td><%= user.user_profile.name %></td>
         <td><%= user.user_profile.phone %></td>
         <td><%= user.user_profile.gender %></td>
