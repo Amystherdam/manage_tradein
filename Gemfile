@@ -55,3 +55,6 @@ gem 'simple_form'
 
 # flexible authentication solution
 gem 'devise'
+
+# One form for multiple related tables
+gem "nested_form"

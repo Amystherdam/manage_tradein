@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= link_to "Profile", edit_user_registration_path %>
+    <%= link_to "New User", new_user_management_path %>
+    <%= link_to "exit", destroy_user_session_path, method: :delete %>
+      
     <%= yield %>
   </body>
 </html>

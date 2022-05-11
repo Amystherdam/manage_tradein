@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin_user = User.create(email: "admin@tradein.com", password: "123456")
-UserProfile.create(name: "Admin", phone: "85988887777", gender: "O", role: "admin", user: admin_user)
+store_manager = User.create(email: "store_manager@tradein.com", password: "123456")
+UserProfile.create(name: "Store Manager", phone: "85988887777", gender: "O", role: "store_manager", user: store_manager)

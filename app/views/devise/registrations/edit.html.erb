@@ -1,0 +1,73 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= nested_form_for([resource_name, resource.with_user_profile], url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= f.fields_for :user_profile do | up | %>
+
+    <figure>
+      <%= image_tag current_user.user_profile.picture  %>
+    </figure>
+
+    <div>
+      <%= up.label :picture %>
+      <%= up.file_field :picture %>
+    </div>
+
+      <div>
+        <%= up.label :name %>
+        <%= up.text_field :name %>
+      </div>
+
+    <div>
+      <%= up.label :phone %>
+      <%= up.text_field :phone %>
+    </div>
+
+    <div>
+      <%= up.label :gender %>
+      <%= up.text_field :gender %>
+    </div>
+
+  <% end %>
+
+  <%= f.email_field :email, required: true, autofocus: true %>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+  <% end %>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password,
+        hint: "leave it blank if you don't want to change it",
+        required: false,
+        input_html: { autocomplete: "new-password" } 
+    %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation,
+          required: false,
+          input_html: { autocomplete: "new-password" } 
+    %>
+  </div>
+  <div>
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password,
+      hint: "we need your current password to confirm your changes",
+      required: true,
+      input_html: { autocomplete: "current-password" } 
+    %>
+  </div>
+
+  <div>
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

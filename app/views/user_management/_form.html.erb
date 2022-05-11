@@ -1,0 +1,53 @@
+<%= nested_form_for([user, user.with_user_profile], url: action) do |f| %>
+  <%= render "devise/shared/error_messages", resource: user %>
+
+  <%= f.fields_for :user_profile do | up | %>
+
+    <figure>
+      <%= image_tag user.user_profile.picture if user.user_profile.picture.attached? %>
+    </figure>
+
+    <div>
+      <%= up.label :picture %>
+      <%= up.file_field :picture %>
+    </div>
+
+    <div>
+      <%= up.label :name %>
+      <%= up.text_field :name %>
+    </div>
+
+    <div>
+      <%= up.label :phone %>
+      <%= up.text_field :phone %>
+    </div>
+
+    <div>
+      <%= up.label :gender %>
+      <%= up.text_field :gender %>
+    </div>
+
+  <% end %>
+
+  <%= f.email_field :email, required: true, autofocus: true %>
+
+    <div>
+    <%= f.label :password %>
+    <%= f.password_field :password,
+        hint: "leave it blank if you don't want to change it",
+        required: false,
+        input_html: { autocomplete: "new-password" } 
+    %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation,
+          required: false,
+          input_html: { autocomplete: "new-password" } 
+    %>
+  </div>
+
+  <div>
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
