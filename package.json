@@ -1,5 +1,7 @@
 {
   "name": "manage_tradein",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "material-design-iconic-font": "^2.2.0"
+  }
 }
