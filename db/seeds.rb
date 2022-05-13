@@ -1,4 +1,4 @@
-puts 'Creating store manager into the database...'
+puts 'Creating one store manager into the database...'
 store_manager = User.create(
   email: "store_manager@tradein.com", 
   password: "123456"
@@ -10,6 +10,21 @@ UserProfile.create(
   gender: "O", 
   role: "store_manager", 
   user: store_manager
+)
+puts 'Insert successfully completed!'
+puts '============================================'
+
+puts 'Creating one salesman into the database...'
+salesman = User.create(
+  email: "salesman@tradein.com", 
+  password: "123456"
+)
+
+UserProfile.create(
+  name: "Salesman", 
+  phone: "85988887777", 
+  gender: "O", 
+  user: salesman
 )
 puts 'Insert successfully completed!'
 puts '============================================'

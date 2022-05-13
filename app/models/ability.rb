@@ -12,11 +12,13 @@ class Ability
         can [:read, :create, :update], Customer
         can [:read, :create, :update], Product
         can :manage, Sale
+        can :read, :dashboard
       when "salesman"
         cannot :manage, :user_management
         can [:read, :create, :update], Customer
         can [:read, :create, :update], Product
         can [:read, :create, :update], Sale
+        can :read, :dashboard
       end
     end
   end
