@@ -1,32 +1,28 @@
-<p id="notice"><%= notice %></p>
+<header class="content__title">
+  <h1>users</h1>
+</header>
 
-<h1>users</h1>
+<div class="toolbar">
+  <div class="toolbar__label"><span class="hidden-xs-down">Total </span><%= @users.all.size %> users</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Picture</th>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Gender</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="actions">
+    <%= link_to 'New User', new_user_management_path %>
+  </div>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= image_tag set_img(user) %></td>
-        <td><%= user.user_profile.name %></td>
-        <td><%= user.user_profile.phone %></td>
-        <td><%= user.user_profile.gender %></td>
-        <td><%= link_to 'Edit', edit_user_management_path(user) %></td>
-        <td><%= link_to "Cancel account", delete_by_management_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
-      </tr>
+  <div class="toolbar__search">
+    <input type="text" placeholder="Search...">
+    <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
+  </div>
+</div>
+
+<div class="row lightbox photos">
+  <% @users.each do |user| %>
+    <%= link_to user_management_path(user), class: "col-md-2 col-4" do %>
+      <div class="lightbox__item photos__item">
+        <%= user.user_profile.name %>
+        <%= image_tag set_img(user) %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+</div>
 
-<br>
-
-<%= link_to 'New user', new_user_management_path %>

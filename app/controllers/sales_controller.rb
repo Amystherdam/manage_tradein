@@ -11,9 +11,13 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
+    @product_ids = Product.all.map(&:id)
+    @iterator_product_ids = 0
   end
 
   def edit
+    @product_ids = Product.all.map(&:id)
+    @iterator_product_ids = 0
   end
 
   def create

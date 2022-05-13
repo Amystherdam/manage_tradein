@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to 'Edit', edit_user_management_path(@user) %> |
-<%= link_to 'Back', user_management_index_path %>
+<%= link_to 'Back', user_management_index_path %> |
+<%= link_to "Cancel account", delete_by_management_path(@user), data: { confirm: "Are you sure?" }, method: :delete %>

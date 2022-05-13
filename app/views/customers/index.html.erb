@@ -1,31 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Customers</h1>
+<header class="content__title">
+  <h1>Customers</h1>
+</header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Avatar</th>
-      <th>Name</th>
-      <th>Birthdate</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="toolbar">
+  <div class="toolbar__label"><span class="hidden-xs-down">Total </span><%= @customers.all.size %> Customers</div>
 
-  <tbody>
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= image_tag set_img(customer) %></td>
-        <td><%= customer.name %></td>
-        <td><%= customer.birthdate %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div class="actions">
+    <%= link_to 'New Customer', new_customer_path %>
+  </div>
+
+  <div class="toolbar__search">
+    <input type="text" placeholder="Search...">
+    <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
+  </div>
+</div>
+
+<div class="row lightbox photos">
+  <% @customers.each do |customer| %>
+    <%= link_to customer, class: "col-md-2 col-4" do %>
+      <div class="lightbox__item photos__item">
+        <%= customer.name %>
+        <%= image_tag set_img(customer) %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Customer', new_customer_path %>
+  <% end %>
+</div>

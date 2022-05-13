@@ -10,10 +10,12 @@ class Ability
       when "store_manager"
         can :manage, :user_management
         can [:read, :create, :update], Customer
+        can [:read, :create, :update], Product
         can :manage, Sale
       when "salesman"
         cannot :manage, :user_management
         can [:read, :create, :update], Customer
+        can [:read, :create, :update], Product
         can [:read, :create, :update], Sale
       end
     end

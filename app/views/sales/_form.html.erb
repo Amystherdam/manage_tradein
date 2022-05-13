@@ -25,7 +25,9 @@
     %>
 
     <% Product.all.size.times do %>
+      <%= form.label Product.find(@product_ids[@iterator_product_ids]).name %>
       <%= form.number_field :quantiti, multiple: true %>
+      <% @iterator_product_ids += 1 %>
     <% end %>
   </div>
 
