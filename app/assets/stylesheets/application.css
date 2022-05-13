@@ -8,4 +8,6 @@
   *= require application/jquery.scrollbar.css
   
   *= require application/app.css.erb
+
+  *= require application/demo.css
  */

@@ -5,7 +5,7 @@
 
 <div class="row quick-stats">
   <% @sales_by_months.each do |sales_by_month| %>
-    <div class="col-sm-6 col-md-3">
+    <div id="widget-month-<%= month_name(sales_by_month.first) %>" class="col-sm-6 col-md-3" data-toggle="modal" data-target="#modal-centered">
       <div class="quick-stats__item bg-success">
         <div class="quick-stats__info">
           <small><%= month_name(sales_by_month.first) %></small>
@@ -16,3 +16,57 @@
     </div>
   <% end %>
 </div>
+
+<div class="modal fade" id="modal-centered" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title center">Top customers of the month!</h5>
+      </div>
+      <div class="modal-body">
+        <table class="table mb-0">
+          <thead>
+            <tr>
+              <th>Placing</th>
+              <th>Name</th>
+              <th>Total in purchases</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const month = ["", "January","February","March","April","May","June","July","August","September","October","November","December"];
+  let topCustomersSales = <%= raw top_customers(@sales_by_months).as_json %>
+
+  const widgetMonths = document.querySelectorAll('[id^="widget-month-"]')
+  const tbody = document.querySelector('tbody')
+
+  for (const widgetMonth of widgetMonths) {
+    widgetMonth.addEventListener('click', () => {
+      tbody.innerHTML = ''
+      let monthName = widgetMonth.querySelector("small").innerHTML
+      let placement = 1
+
+      for (let topCustomerSales in topCustomersSales) {
+        if (topCustomersSales[topCustomerSales][0] == month.indexOf(monthName)) {
+          tbody.innerHTML +=`
+            <tr>
+              <td>${placement}º</td>
+              <td>${topCustomersSales[topCustomerSales][1]}</td>
+              <td>${topCustomersSales[topCustomerSales][2]}</td>
+            </tr>
+          `
+          ++placement
+        }
+      }
+    })
+  }
+</script>
