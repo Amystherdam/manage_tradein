@@ -1,13 +1,13 @@
 /*
   *= require_self
 
-  *= require application/material-design-iconic-font.css.erb
-  *= require application/animate.min.css
+  *= require shared/material-design-iconic-font.css.erb
+  *= require shared/animate.min.css
   *= require application/fullcalendar.min.css
   *= require application/sweetalert2.min.css
   *= require application/jquery.scrollbar.css
-  
-  *= require application/app.css.erb
+
+  *= require shared/app.css.erb
 
   *= require application/demo.css
  */

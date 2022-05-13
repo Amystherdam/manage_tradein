@@ -12,11 +12,9 @@
     <%= stylesheet_link_tag 'devise' %>
   </head>
 
-  <body>
-    <div id="app">
-      <section class="section">
-          <%= yield %>                
-      </section>
+  <body data-ma-theme="green">
+    <div class="login">
+      <%= yield %>                
     </div>
     
     <%= javascript_include_tag 'devise' %>
