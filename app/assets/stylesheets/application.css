@@ -1,12 +1,11 @@
 /*
   *= require_self
 
-  *= require material-design-iconic-font.min.css
-  *= require animate.min.css
-  *= require fullcalendar.min.css
-  *= require sweetalert2.min.css
-  *= require jquery.scrollbar.css
-  *= require material-design-iconic-font/dist/css/material-design-iconic-font.min.css
+  *= require application/material-design-iconic-font.css.erb
+  *= require application/animate.min.css
+  *= require application/fullcalendar.min.css
+  *= require application/sweetalert2.min.css
+  *= require application/jquery.scrollbar.css
   
-  *= require app.css.erb
+  *= require application/app.css.erb
  */

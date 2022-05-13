@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+  
   devise_for :users, :skip => [:registrations] 
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
@@ -14,5 +16,5 @@ Rails.application.routes.draw do
   resources :products
   resources :customers
 
-  root to: 'sales#index'
+  root to: 'dashboard#index'
 end

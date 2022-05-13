@@ -2,7 +2,3 @@
 # yarn lockfile v1
 
 
-material-design-iconic-font@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/material-design-iconic-font/-/material-design-iconic-font-2.2.0.tgz#66c3b1c880ef0cb87c02ca2a0f900ff0fe7f480d"
-  integrity sha1-ZsOxyIDvDLh8AsoqD5AP8P5/SA0=

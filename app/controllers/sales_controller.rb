@@ -52,6 +52,12 @@ class SalesController < ApplicationController
     end
 
     def sale_params
-      params.require(:sale).permit(:outgoing_invoice, :customer_id, :date_sale, product_ids: [])
+      params.require(:sale).permit(
+        :outgoing_invoice,
+        :customer_id,
+        :date_sale,
+        product: [],
+        quantiti: []
+      )
     end
 end

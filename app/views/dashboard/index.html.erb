@@ -1,0 +1,18 @@
+<header class="content__title">
+  <h1>Dashboard</h1>
+  <small>Sales per month</small>
+</header>
+
+<div class="row quick-stats">
+  <% @sales_by_months.each do |sales_by_month| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="quick-stats__item bg-success">
+        <div class="quick-stats__info">
+          <small><%= month_name(sales_by_month.first) %></small>
+          <h2 class="mt-2">$ <%= total_sales_amount(sales_by_month) %></h2>
+          <small>Click and see featured customers</small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

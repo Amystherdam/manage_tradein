@@ -13,16 +13,20 @@
 
   <div>
     <%= form.label :customer_id %>
-    <%= form.text_field :customer_id %>
+    <%= form.text_field :customer_id  %>
   </div>
 
-  <div>
+  <div> 
     <%= 
-      form.input :product_ids,
-      collection: Product.all.map { |product| [ product.name, product.id ] },
+      form.input :product,
+      collection: Product.all.map { |product| [ product.name, [id: product.id] ] },
       include_hidden: false,
       input_html: { multiple: true } 
     %>
+
+    <% Product.all.size.times do %>
+      <%= form.number_field :quantiti, multiple: true %>
+    <% end %>
   </div>
 
   <div>

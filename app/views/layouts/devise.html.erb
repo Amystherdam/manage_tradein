@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ManageTradein</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'devise' %>
+  </head>
+
+  <body>
+    <div id="app">
+      <section class="section">
+          <%= yield %>                
+      </section>
+    </div>
+    
+    <%= javascript_include_tag 'devise' %>
+  </body>
+</html>

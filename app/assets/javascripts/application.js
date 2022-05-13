@@ -1,16 +1,16 @@
 //= require rails-ujs
 //= require activestorage
 
-//= require jquery.min.js
-//= require popper.min.js
-//= require bootstrap.min.js
-//= require jquery.scrollbar.min.js
-//= require jquery-scrollLock.min.js
-//= require moment.min.js
-//= require fullcalendar.min.js
-//= require autosize.min.js
-//= require sweetalert2.min.js
+//= require application/jquery.min.js
+//= require application/popper.min.js
+//= require application/bootstrap.min.js
+//= require application/jquery.scrollbar.min.js
+//= require application/jquery-scrollLock.min.js
+//= require application/moment.min.js
+//= require application/fullcalendar.min.js
+//= require application/autosize.min.js
+//= require application/sweetalert2.min.js
 
-//= require app.min.js
+//= require application/app.min.js
 
-//= require more_calendar.js
+//= require application/more_calendar.js

@@ -55,8 +55,12 @@
           </div>
 
           <ul class="navigation">
-            <li><a href="#"><i class="zmdi zmdi-home"></i> Dashboard</a></li>
-            
+            <li>
+              <%= link_to dashboard_index_path do %>
+                <i class="zmdi zmdi-home"></i> Dashboard
+              <% end %>
+            </li>
+
             <li>
               <%= link_to customers_path do %>
                 <i class="zmdi zmdi-face"></i> Customers
